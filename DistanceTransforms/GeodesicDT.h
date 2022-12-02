@@ -66,7 +66,7 @@ void GeodesicDT(imagetype seeds, imagetype labels, imagetype cost, double* dt, d
       for(int i=0; i<neighbors.size(); i++){
 	ni=neighbors[i];
 	
-	fval= fval=dt[e.index]+abs(double(cost[ni])-double(cost[e.index])) + 1;
+  fval=dt[e.index]+abs(double(cost[ni])-double(cost[e.index])) + 1;
 	 
 	if(fval<dt[ni] || (fval==dt[ni] && segmentation[e.index]<segmentation[ni])){
 	  dt[ni]=fval;

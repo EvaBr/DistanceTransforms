@@ -8,6 +8,7 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
+#include <cstdlib>
 #include <vector>
 using namespace std;
 
@@ -279,8 +280,8 @@ class image{
   }
 
   void get_8_neighbors_py(int x, int y, vector<int>& n, vector<int>& addto){
-    n.clear()
-    addto.clear()
+    n.clear();
+    addto.clear();
     for(int i=-1; i<2; i++){
       for(int j=-1; j<2; j++){
         if(valid(x+i,y+j) && !(i==0 && j==0)){

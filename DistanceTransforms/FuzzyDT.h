@@ -66,7 +66,7 @@ void FuzzyDT(imagetype seeds, imagetype labels, imagetype cost, double* dt, doub
       for(int i=0; i<neighbors.size(); i++){
 	ni=neighbors[i];
 	
-	fval= fval=dt[e.index]+0.5*abs(double(cost[ni])+double(cost[e.index]));
+	fval=dt[e.index]+0.5*abs(double(cost[ni])+double(cost[e.index]));
 	 
 	if(fval<dt[ni] || (fval==dt[ni] && segmentation[e.index]<segmentation[ni])){
 	  dt[ni]=fval;

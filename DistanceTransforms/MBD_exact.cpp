@@ -14,6 +14,7 @@ using namespace std;
 // MBD_exact(seeds, labels, cost)
 ////////////////////////////////////////////////////
 
+
 void mexFunction(int nlhs, mxArray *plhs[],int nrhs, const mxArray *prhs[]) {
   
   //Check number of input arguments
@@ -31,7 +32,7 @@ void mexFunction(int nlhs, mxArray *plhs[],int nrhs, const mxArray *prhs[]) {
   }
 
   if (!(mxIsUint8(prhs[2]))) {
-    mexErrMsgTxt("Thired input array must be of type uint8.");
+    mexErrMsgTxt("Third input array must be of type uint8.");
   }
 
   int ndim =  mxGetNumberOfDimensions(prhs[0]);
@@ -39,7 +40,7 @@ void mexFunction(int nlhs, mxArray *plhs[],int nrhs, const mxArray *prhs[]) {
 
   //Setup output
   plhs[0]=mxCreateNumericArray(ndim,dim_array,mxDOUBLE_CLASS,mxREAL);
-  double* dt = (double *) mxGetPr(plhs[0]);
+  double* dt = (double *) mxGetPr(plhs[0]); /*basically go from pointers to matlab arrays to pointers to data*/
   plhs[1]=mxCreateNumericArray(ndim,dim_array,mxDOUBLE_CLASS,mxREAL);
   double* segmentation = (double *) mxGetPr(plhs[1]);
 

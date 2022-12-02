@@ -1,0 +1,7 @@
+.vscode
+Pip*
+**/__pycache__/
+*.nii
+*.npy
+
+DistanceTransforms/dists/*.so
